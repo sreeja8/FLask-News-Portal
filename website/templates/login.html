@@ -1,5 +1,25 @@
 {% extends "base.html" %}
 {% block title %}Login{% endblock %}
+{% block navbar %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbar">
+        <div class="navbar-nav">
+            {% if user.is_authenticated %}
+            <a class="nav-item nav-link" id="home" href="/">Home</a>
+            <a class="nav-item nav-link" id="editor_news" href="/editor_news">Editor news</a>
+            <a class="nav-item nav-link" id="logout" href="/logout">Logout</a>
+            {% elif user.is_anonymous %}
+            <a class="nav-item nav-link" id="home" href="/">Home</a>
+            <a class="nav-item nav-link" id="login" href="/login">Editor's Corner</a>
+            {% endif %}
+        </div>
+    </div>
+</nav>
+{% endblock %}
+
 {% block content %}
 
 <form method="POST">
@@ -26,5 +46,10 @@
     </div>
     <br />
     <button type="submit" class="btn btn-primary">Login</button>
+    <br>
+    <div class="form-group">
+        <label for="not an editor">Not an Editor?</label>
+        <a href="/editor_corner/sign-up">Sign up today!</a>
+    </div>
 </form>
 {% endblock %}

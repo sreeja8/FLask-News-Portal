@@ -11,8 +11,8 @@
             />
         <title>{% block title %}Home{% endblock %}</title>
     </head>
-    
     <body>
+        {% block navbar %}
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
                 <span class="navbar-toggler-icon"></span>
@@ -25,12 +25,14 @@
                     <a class="nav-item nav-link" id="logout" href="/logout">Logout</a>
                     {% elif user.is_anonymous %}
                     <a class="nav-item nav-link" id="home" href="/">Home</a>
-                    <a class="nav-item nav-link" id="login" href="/login">Login</a>
-                    <a class="nav-item nav-link" id="sign_up" href="/sign-up">Sign-Up</a>
+                    <a class="nav-item nav-link" id="editor_corner" href="/login">Editor's Corner</a>
+                    <!-- <a class="nav-item nav-link" id="login" href="/editor_corner/login">Login</a>
+                    <a class="nav-item nav-link" id="sign_up" href="/editor_corner/login/sign-up">Sign-Up</a> -->
                     {% endif %}
                 </div>
             </div>
         </nav>
+        {% endblock %}
 
         {% with messages = get_flashed_messages(with_categories=true) %}
         {% if messages %}
