@@ -14,4 +14,7 @@ Sign up page for editors.
 Logged in editor can add or delete news to his profile. This news gets stored into the database along with author/editor details such as name, time, etc.
 #### Logout :
 Logout functionality for editors.
+
+## **Demo**
+
 ![2022-09-29 16-44-46-79](https://user-images.githubusercontent.com/112502713/193017778-ad6ad5d6-0a5b-4a92-9604-6871cb25322b.gif)
