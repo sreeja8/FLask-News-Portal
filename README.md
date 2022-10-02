@@ -15,6 +15,24 @@ Logged in editor can add or delete news to his profile. This news gets stored in
 #### Logout :
 Logout functionality for editors.
 
+### APIs
+
+`/`: `GET` call renders the home page to any user that has all news added by all editors.
+
+`/login`: `GET` call renders the login page to the user.
+          `POST` call logs in the user.
+
+`/logout`: `GET` call logs the editor out.
+
+`/editor_corner/sign-up`: `GET` call renders the sign-up page to the user.
+                          `POST` call commits the user account to the database and redirects the user to login post successful account creation.
+                     
+ 
+`/editor_news`: `GET` call renders only the news previously added by the logged in editor.
+                 `POST` call commits the news added by the logged in user.
+                 
+`/delete-note`: `POST` call helps editor to delete his own news.
+
 ## **Demo**
 
 ![2022-09-29 16-44-46-79](https://user-images.githubusercontent.com/112502713/193017778-ad6ad5d6-0a5b-4a92-9604-6871cb25322b.gif)
