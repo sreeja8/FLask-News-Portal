@@ -12,6 +12,10 @@ def login():
         email = request.form.get('email')
         password = request.form.get('password')
 
+        if email not in ["sreejaAdmin@yahoo.com", "johnAdmin@yahoo.com", "celinaAdmin@yahoo.com"]:
+            flash("Account doesn't have editor access", category='error')
+            return redirect(url_for("views.home"))
+
         user = User.query.filter_by(email=email).first()
         if user:
             if check_password_hash(user.password, password):
