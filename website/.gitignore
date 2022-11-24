@@ -1,2 +1,2 @@
-__pycache__
-{DB_NAME}
+../env/
+../instance/
